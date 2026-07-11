@@ -7,8 +7,8 @@ def winsorize(data, lo_q, hi_q):
     high = np.percentile(a, hi_q, axis = 0)
     b = np.clip(a,low,high)
 
-    low_mask = a < low.astype(np.float64)
-    high_mask = a > high.astype(np.float64)
+    low_mask = (a < low).astype(np.float64)
+    high_mask = (a > high).astype(np.float64)
 
     return np.stack((b,low_mask, high_mask), axis=0)
     
