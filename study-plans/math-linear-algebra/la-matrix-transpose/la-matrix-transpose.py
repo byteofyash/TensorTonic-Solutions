@@ -1,13 +1,15 @@
 import numpy as np
 
 def matrix_transpose(A):
-    A = np.array(A)
-    rows, cols = A.shape
-
-    result = np.zeros((cols, rows))
-
-    for i in range(rows):
-        for j in range(cols):
-            result[j][i] = A[i][j]
-
-    return result
+    """
+    Returns: ndarray, the transpose of A.
+    """
+    a = np.array(A)
+    n,m = a.shape
+    result = np.zeros((m,n))
+    for i in range(n):
+        for j in range(m):
+            result[j][i] = a[i][j]
+    return result       
+        
+            
