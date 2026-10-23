@@ -1,9 +1,12 @@
 import numpy as np
 
-def hadamard_product(A, B):
+def hadamard_product(A: list, B: list) -> np.ndarray:
     """
-    Returns: ndarray, the element-wise product A * B.
+    Returns the element-wise product as a float64 array.
     """
-    A = np.array(A)
-    B = np.array(B)
-    return A * B
+    a = np.asarray(A, dtype=np.float64)
+    b = np.asarray(B, dtype=np.float64) 
+    r = a * b
+    return r
+
+    
