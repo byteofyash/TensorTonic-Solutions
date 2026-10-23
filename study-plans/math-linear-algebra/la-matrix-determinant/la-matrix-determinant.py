@@ -1,10 +1,9 @@
 import numpy as np
 
-def matrix_determinant(A):
+def matrix_determinant(A: list) -> float:
     """
-    Returns: float, the determinant of square matrix A.
+    Returns the determinant as a Python float.
     """
-    matrix = np.array(A, dtype=float)
-    determinant = np.linalg.det(matrix)
-
-    return float(determinant)
+    
+    a = np.asarray(A, dtype=np.float64)
+    return float(np.linalg.det(a))
