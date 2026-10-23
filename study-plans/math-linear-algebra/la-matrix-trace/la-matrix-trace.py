@@ -1,12 +1,14 @@
 import numpy as np
 
-def matrix_trace(A):
+def matrix_trace(A: list) -> float:
     """
-    Returns: float, the trace (sum of diagonal elements) of A.
+    Returns the trace as a Python float.
     """
-    trace = 0
+    a =  np.asarray (A, dtype= np.float64)
+    [m,n] = a.shape
+    sum = 0.0
+    for i in range (0,m):
+                sum += a[i][i]
 
-    for i in range(len(A)):
-        trace += A[i][i]
-
-    return trace
+    return float(sum)
+    
