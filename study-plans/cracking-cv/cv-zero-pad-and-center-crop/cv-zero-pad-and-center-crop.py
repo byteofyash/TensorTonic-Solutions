@@ -5,32 +5,27 @@ def pad_and_center_crop(image: list, pad: int, crop_h: int, crop_w: int) -> list
     """
     img = np.array(image, dtype = np.float64)
     H,W = img.shape
-    padH = H + 2*pad
-    padW = W + 2*pad
-    
-    padded = np.zeros((padH, padW), dtype = np.float64)
 
-    padded[pad:pad+H, pad:pad+W] = img
+    padh = H + 2*pad
+    padw = W + 2*pad
 
-    r0 = (padH - crop_h) // 2
-    c0 = (padW - crop_w) // 2
+    padded = np.zeros((padh, padw), dtype = np.float64)
 
-    cropped = padded[r0: r0 + crop_h, c0: c0 + crop_w]
+    padded[pad: pad+H, pad:pad+W] = img
 
-    finalcrop = cropped.tolist()
-    for row in finalcrop:
-        for value in row:
-            round(value,4)
+    h = crop_h
+    w = crop_w
     
-    return finalcrop
+    r0 = (padh-h) //2
+    c0 = (padw-w) //2
 
-    
-    
+    cropped = padded[r0:r0+h, c0:c0+w]
 
-    
-    
+    final_img = cropped.tolist()
 
-    
-    
+    for row in final_img:
+        for val in row:
+            val =round(val,4)
 
+    return final_img
     
