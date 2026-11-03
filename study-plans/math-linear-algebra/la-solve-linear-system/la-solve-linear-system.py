@@ -1,11 +1,17 @@
 import numpy as np
 
-def solve_linear_system(A, b):
+def solve_linear_system(A: list, b: list) -> np.ndarray:
     """
-    Returns: float64 array, the solution x to A @ x = b.
+    Returns the float64 solution vector.
     """
-    A = np.array(A, dtype=np.float64)
-    b = np.array(b, dtype=np.float64)
 
-    return np.linalg.solve(A, b)
+    A = np.array(A, dtype = np.float64)
+    b = np.array(b, dtype = np.float64)
+    x = np.linalg.solve(A,b)
+
+    return x
+    
+
+    
+
     
